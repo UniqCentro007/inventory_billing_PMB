@@ -1,0 +1,21 @@
+<h1>Reports Dashboard</h1>
+
+<h2>Monthly Sales</h2>
+<ul>
+{% for sale in monthly_sales %}
+  <li>{{ sale.month|date:"F Y" }}: ₹{{ sale.total_sales }}</li>
+{% endfor %}
+</ul>
+
+<h2>Vendor Purchases</h2>
+<ul>
+{% for vp in vendor_purchases %}
+  <li>{{ vp.vendor__name }}: {{ vp.total_quantity }} units</li>
+{% endfor %}
+</ul>
+
+<h2>Total Tax Collected</h2>
+<p>₹{{ tax_collected.total_tax }}</p>
+
+<h2>Return Summary</h2>
+<p>₹{{ return_summary.total_returns }}</p>
